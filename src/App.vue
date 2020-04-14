@@ -1,28 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <component-one></component-one>
+    <component-two></component-two>
+
+    <component-pubsub-one></component-pubsub-one>
+    <component-pubsub-two></component-pubsub-two>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ComponentOne from './components/ComponentOne.vue'
+import ComponentTwo from './components/ComponentTwo.vue'
+import ComponentPubSubOne from './components/ComponentPubSubOne.vue'
+import ComponentPubSubTwo from './components/ComponentPubSubTwo.vue'
+// import Bus from './eventBus.js'
 
 export default {
   name: 'App',
+  provide: {
+    name: 'provide-inject传输'
+  },
   components: {
-    HelloWorld
+    'component-one': ComponentOne,
+    'component-two': ComponentTwo,
+    'component-pubsub-one': ComponentPubSubOne,
+    'component-pubsub-two': ComponentPubSubTwo
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>
